@@ -1,0 +1,24 @@
+{
+  "name": "Etherscan Labels",
+  "description": "Human-readable addresses on Etherscan Logs!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://arbiscan.io/tx/*",
+        "https://etherscan.io/tx/*",
+        "https://polygonscan.com/tx/*"
+      ],
+      "all_frames": true,
+      "js": ["src/main.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["data/tokensList.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
